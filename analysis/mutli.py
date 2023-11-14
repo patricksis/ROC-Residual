@@ -11,7 +11,7 @@ X_columns = [col for col in df_encoded.columns if 'Chromosome_Number' in col or 
 selected_variables = ['Strand_D', 'Strand_E', 'Chromosome_Arm_L', 'Chromosome_Arm_R']
 
 X = df_encoded[X_columns]
-Y = df_encoded['Y_residuals']
+Y = df['Y_residuals']
 X = X.astype(float)
 
 
