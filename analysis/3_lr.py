@@ -3,10 +3,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-combined_data = pd.read_csv('../data/combined_data.csv',sep=',')
+combined_data_cleaned = pd.read_csv('combined_data_cleaned.csv',sep=',')
 
 # Drop rows with missing values in both 'Log Mean' and 'Mean.log10' columns
-combined_data_cleaned = combined_data.dropna(subset=['Obs.Log.Mean', 'Mean.log10'], how='any')
+#combined_data_cleaned = combined_data.dropna(subset=['Obs.Log.Mean', 'Mean.log10'], how='any')
 
 X = combined_data_cleaned['Obs.Log.Mean']  # Independent variable
 y = combined_data_cleaned['Mean.log10']  # Dependent variable

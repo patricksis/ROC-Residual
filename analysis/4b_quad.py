@@ -5,8 +5,7 @@ import pandas as pd
 import numpy as np
 import inspect
 
-df = pd.read_csv('../data/combined_data.csv')
-dfc = df.dropna(subset=['Obs.Log.Mean', 'Mean.log10', 'Obs.Log.Std.Dev', 'log10.Std.Dev'], how='any').copy()
+dfc = pd.read_csv('../data/annotated_genes.csv')
 
 x = dfc['Obs.Log.Mean']
 y = dfc['Mean.log10']
@@ -27,7 +26,7 @@ residuals = my_run.eps
 dfc.loc[:, 'odr_y'] = my_run.y
 dfc.loc[:, 'Y_residuals'] = residuals
 
-dfc.to_csv('/Users/patricksisler/projects/gilchrist/data/clean_data.csv', index=False)
+dfc.to_csv('/Users/patricksisler/projects/gilchrist/data/annotated_genes.csv', index=False)
 
 sns.scatterplot(data=dfc, x='odr_y', y='Y_residuals')
 sns.displot(data=dfc, x='odr_y', y='Y_residuals')
